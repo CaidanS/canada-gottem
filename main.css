@@ -65,25 +65,25 @@ body{
 }
 
 #sticker:hover{
-    -webkit-animation: marquee 4s infinite linear;
+    -webkit-animation: marquee 20s infinite linear;
 }
 
 #patch:hover{
-    -webkit-animation: marquee 4s infinite linear;
+    -webkit-animation: marquee 20s infinite linear;
 }
 
 @-webkit-keyframes marquee {
     0% {
       background-position: 0;
     }
-    33%{
+    /* 33%{
         background-position: 75% 25%
     }
     66% {
         background-position: 25% 75%; 
-    }
+    } */
     100% {
-      background-position: 50% 50%;
+      background-position: 500% 500%;
     }
   }
 

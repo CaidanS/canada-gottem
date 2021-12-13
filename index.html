@@ -33,7 +33,7 @@
 <div id="error-message"></div>
 <script>
 (function() {
-  var stripe = Stripe('pk_live_51K64EeAHI4v7SeoPWxXkblD0ml9NbzIqfH8gErUhW1eXsz77YSidOW2ZdO9gahDHUZXqWnQdZDKOZM9sfSaIEY2I00jZdWVkq0');
+  var stripe = Stripe('pk_test_51K64EeAHI4v7SeoP8Pw9OoEwBkQGvY72x90NsViAiavnw61FVwxxQdNAvScNe8VLQ4gzcoXnOuC0uad7nMZ11UW500SZel9kc1');
   var checkoutButton = document.getElementById('checkout-button');
   checkoutButton.addEventListener('click', function () {
     /*
@@ -41,7 +41,7 @@
      * them to Checkout.
      */
     stripe.redirectToCheckout({
-      lineItems: [{price: 'price_1K64SVAHI4v7SeoPZ2qQEkQO', quantity: cart["sticker"]}, {price: 'price_1K64SFAHI4v7SeoPEz0ZxHN3', quantity: cart["patch"]}],
+      lineItems: [{price: 'price_1K66npAHI4v7SeoPqaV6ydyI', quantity: cart["sticker"]}, {price: 'price_1K66ndAHI4v7SeoPJ8slh3Un', quantity: cart["patch"]}],
       mode: 'payment',
       /*
        * Do not rely on the redirect to the successUrl for fulfilling
