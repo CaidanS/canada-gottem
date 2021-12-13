@@ -1,0 +1,136 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+}
+@font-face {
+    font-family: death;
+    src: url(death.ttf);
+  }
+
+h1{
+    margin: 0px;
+}
+
+html{
+    height: 100%;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    height: 100%;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    background-color: black;
+}
+
+#main-grid{
+    width: 100vw;
+    height: 100px;
+    /* background-color: aquamarine; */
+    display: grid;
+    grid-template: 
+    "header header"
+    "sticker patch"
+    "checkout checkout";
+    grid-template-columns: calc(50vw - .5em) calc(50vw);
+    grid-template-rows: 15vh calc(75vh - 1em) 10vh;
+    text-align: center; 
+    grid-gap: .5em 
+}
+
+#header{
+    padding: 1vh;
+    font-family: death;
+    font-size: 5vh;
+    /* text-align: center; */
+    grid-area: header;
+    background-color: greenyellow;
+    
+}
+#sticker{
+    background-image: url("sticker.png");
+    background-size: 10vh;
+    grid-area: sticker;
+    /* background-color: coral; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-size: x-large;
+}
+#patch{
+    background-image: url("gottem.png");
+    background-size: 10vh;
+    text-align: center;
+    grid-area: patch;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-size: x-large;
+}
+
+#checkout{
+    grid-area: checkout;
+    /* background-color: fuchsia; */
+}
+
+.add-to-cart {
+    display: grid;
+    grid-template-areas: 
+    "minus number plus";
+    margin: 2vh;
+    text-align: center; 
+    /* background-color: white; */
+}
+
+#minus{
+    grid-area: minus;  
+    text-align: center; 
+    width: 100%;    
+  
+}
+
+#plus{
+    grid-area: plus;
+    text-align: center; 
+    width: 100%;
+
+}
+/* #sticker-count{
+    grid-area: number;
+    text-align: center; 
+    width: 100%;
+    height: 100%;
+    border-radius: 2vh;
+    line-height: 400%;
+} */
+
+.add-button {
+    width: 10%;
+    border-radius: 2vh;
+    background-color: white;
+    border-color: navy;
+    cursor: pointer;
+}
+.count {
+    grid-area: number;
+    text-align: center; 
+    width: 60%;
+    height: 100%;
+    margin-left: 20%;
+    margin-right: 20%;
+    border-radius: 2vh;
+    line-height: 400%;
+    background-color: white;
+}
+
+#checkout-button{
+    width: 100%;
+    height: 100%;
+    background-color:cyan;
+    border: none;
+    cursor: pointer;
+    font-size: xx-large;
+    font-weight: bolder;
+}
