@@ -40,6 +40,9 @@ body{
     grid-gap: .5em 
 }
 
+
+  
+
 #header{
     padding: 1vh;
     font-family: death;
@@ -58,7 +61,32 @@ body{
     flex-direction: column;
     justify-content: space-between;
     font-size: x-large;
+    
 }
+
+#sticker:hover{
+    -webkit-animation: marquee 4s infinite linear;
+}
+
+#patch:hover{
+    -webkit-animation: marquee 4s infinite linear;
+}
+
+@-webkit-keyframes marquee {
+    0% {
+      background-position: 0;
+    }
+    33%{
+        background-position: 75% 25%
+    }
+    66% {
+        background-position: 25% 75%; 
+    }
+    100% {
+      background-position: 50% 50%;
+    }
+  }
+
 #patch{
     background-image: url("gottem.png");
     background-size: 10vh;
@@ -81,6 +109,7 @@ body{
     "minus number plus";
     margin: 2vh;
     text-align: center; 
+    border: none;
     /* background-color: white; */
 }
 
@@ -97,14 +126,13 @@ body{
     width: 100%;
 
 }
-/* #sticker-count{
-    grid-area: number;
-    text-align: center; 
-    width: 100%;
-    height: 100%;
-    border-radius: 2vh;
-    line-height: 400%;
-} */
+#sticker-count{
+    background-color: tomato;
+}
+
+#patch-count{
+    background-color: magenta;
+}
 
 .add-button {
     width: 10%;
@@ -112,6 +140,8 @@ body{
     background-color: white;
     border-color: navy;
     cursor: pointer;
+    border: .5em solid black;
+    font-size: xx-large;
 }
 .count {
     grid-area: number;
@@ -121,8 +151,10 @@ body{
     margin-left: 20%;
     margin-right: 20%;
     border-radius: 2vh;
-    line-height: 400%;
-    background-color: white;
+    line-height: 600%;
+    background-color: greenyellow;
+    font-size: xx-large;
+    /* border: .5em dashed black; */
 }
 
 #checkout-button{
@@ -175,3 +207,46 @@ body{
     text-decoration: none;
     cursor: pointer;
   }
+
+  @media screen and (max-height: 1000px) {
+    #main-grid{
+        width: 100vw;
+        height: 100px;
+        /* background-color: aquamarine; */
+        display: grid;
+        grid-template: 
+        "header"
+        "sticker"
+        "patch"
+        "checkout";
+        grid-template-columns: 100%;
+        grid-template-rows: auto 30vh 30vh 15vh;
+        text-align: center; 
+        grid-gap: .5em 
+    }
+    #header{
+        font-size: xx-large;
+    }
+    .add-button{
+        font-size: small;
+        width: 100%;
+        border-radius: 0px;
+        border: none;
+    }
+    .count {
+        font-size: small;
+        background-color: greenyellow;
+        color: black;
+        /* border: .3em double black; */
+        width: 100%;
+        height: auto;
+        margin: 0px;
+        border-radius: 0px;
+    }
+    .add-to-cart{
+        margin: 0px;
+        border-radius: 0px;
+    }
+  }
+
+  
