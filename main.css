@@ -103,6 +103,10 @@ body{
     /* background-color: fuchsia; */
 }
 
+#about_section{
+    display: none;
+}
+
 .add-to-cart {
     display: grid;
     grid-template-areas: 
@@ -208,19 +212,20 @@ body{
     cursor: pointer;
   }
 
-  @media screen and (max-height: 1000px) {
+  @media screen and (max-width: 800px) {
     #main-grid{
         width: 100vw;
-        height: 100px;
+        height: 100vh;
         /* background-color: aquamarine; */
         display: grid;
         grid-template: 
         "header"
         "sticker"
         "patch"
-        "checkout";
+        "checkout"
+        "about";
         grid-template-columns: 100%;
-        grid-template-rows: auto 30vh 30vh 15vh;
+        grid-template-rows: auto 30vh 30vh 15vh 0vh;
         text-align: center; 
         grid-gap: .5em 
     }
@@ -247,6 +252,14 @@ body{
         margin: 0px;
         border-radius: 0px;
     }
+    #about_button{
+        display: none;
+    }
+    #about_section{
+        display: block;
+        height: 1fr;
+        background-color: yellow;
+        grid-area: about;
+    }
   }
 
-  

@@ -5,13 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://js.stripe.com/v3/"></script>
     <script src="site.js"></script>
+    <link rel="icon" href="sticker.png">
 </head>
 <body> 
     <div id="main-grid">
         <div id="header">
             <h1 style="font-family: death;">Canada Gottem&trade;</h1>
             <!-- <marquee direction="down"><h1>Canada Gottem&trade;Canada Gottem&trade;Canada Gottem&trade;</h1></marquee> -->
-        </div>
+            <div style="position: absolute;
+            top: 0px; right: .2em;" id="about_button"><button onclick="show_modal_about()" style="background: none; border: none; cursor: pointer;"><h1 style="text-decoration: underline;">about</h1></button></div>
+          </div>
         <div id="sticker">
             <h1 style="background-color: tomato;">Sticker: $3</h1>
             <div class="add-to-cart">
@@ -30,7 +33,10 @@
         </div>
         <div id="checkout">            
             <button id="checkout-button">Current Total: $<span id="total">11</span>. <span style="text-decoration: underline; color: navy;">Checkout!</span></button>
-<div id="error-message"></div>
+          <div id="error-message"></div>
+          <div id="about_section">
+            <span class="line" style="display: inline-block;">Created by <a href="https://www.veniceohleyer.com/">Venice Ohleyer</a>,</span><span class="line" style="display: inline-block;">website by <a href="https://caidan.ml">Caidan Speth-McCrary</a></span>.
+          </div>
 <script>
 (function() {
   var stripe = Stripe('pk_test_51K64EeAHI4v7SeoP8Pw9OoEwBkQGvY72x90NsViAiavnw61FVwxxQdNAvScNe8VLQ4gzcoXnOuC0uad7nMZ11UW500SZel9kc1');
@@ -44,6 +50,7 @@
       lineItems: [{price: 'price_1K66npAHI4v7SeoPqaV6ydyI', quantity: cart["sticker"]}, {price: 'price_1K66ndAHI4v7SeoPJ8slh3Un', quantity: cart["patch"]}],
       mode: 'payment',
       shippingAddressCollection: {allowedCountries: ['US', 'CA']},
+      // shippingOptions: [{shipping_rate: 'shr_1K67SCAHI4v7SeoPudmVFfII'}, {shipping_rate: 'shr_1K67P6AHI4v7SeoPt5TthhS2'}],
       /*
        * Do not rely on the redirect to the successUrl for fulfilling
        * purchases, customers may not always reach the success_url after
@@ -77,15 +84,23 @@
           <p>Thank you for your purchase of totally legit authentic <span style="font-family: death; color: orange;">Canada Gottem&trade;</span> Happy flexing!</p>
           <a href="https://www.instagram.com/canada_gottem/">Follow the instagram if you're cool &#128553;</a></p>
         </div>
+        
       
+      </div>
+      <div id="myModal-2" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        Created by <a href="https://www.veniceohleyer.com/">Venice Ohleyer</a>, website by <a href="https://caidan.ml">Caidan Speth-McCrary</a>.
       </div>
       <script>
 
 // Get the modal
 var modal = document.getElementById("myModal");
+var modal2 = document.getElementById("myModal-2");
 
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
+var span2 = document.getElementsByClassName("close")[1];
 
 
 
@@ -94,11 +109,19 @@ var span = document.getElementsByClassName("close")[0];
 span.onclick = function() {
   modal.style.display = "none";
 }
+span2.onclick = function() {
+  modal2.style.display = "none";
+}
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
   if (event.target == modal) {
     modal.style.display = "none";
+  }
+}
+window.onclick = function(event) {
+  if (event.target == modal2) {
+    modal2.style.display = "none";
   }
 }
 // When the user clicks on the button, open the modal
@@ -108,6 +131,9 @@ if(window.location.hash) {
         modal.style.display = "block";
       }
       // hash found
+}
+show_modal_about = function(){
+  modal2.style.display = "block";
 }
       </script>
 </body>
