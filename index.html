@@ -56,7 +56,7 @@
      * them to Checkout.
      */
     stripe.redirectToCheckout({
-      lineItems: [{price: 'price_1K64SVAHI4v7SeoPZ2qQEkQO', quantity: 1}],
+      lineItems: [{price: 'price_1K64SVAHI4v7SeoPZ2qQEkQO', quantity: 1}, {price: 'price_1K64SFAHI4v7SeoPEz0ZxHN3', quantity: 1}],
       mode: 'payment',
       /*
        * Do not rely on the redirect to the successUrl for fulfilling
@@ -65,8 +65,8 @@
        * Instead use one of the strategies described in
        * https://stripe.com/docs/payments/checkout/fulfill-orders
        */
-      successUrl: 'https://sad-austin-4cde65.netlify.app/',
-      cancelUrl: 'https://sad-austin-4cde65.netlify.app/',
+      successUrl: 'https://sad-austin-4cde65.netlify.app/success',
+      cancelUrl: 'https://sad-austin-4cde65.netlify.app/cancel',
     })
     .then(function (result) {
       if (result.error) {
