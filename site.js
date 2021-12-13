@@ -50,3 +50,4 @@ checkout = function(){
         }
       });
 }
+

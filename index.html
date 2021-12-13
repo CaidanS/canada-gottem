@@ -13,7 +13,7 @@
             <!-- <marquee direction="down"><h1>Canada Gottem&trade;Canada Gottem&trade;Canada Gottem&trade;</h1></marquee> -->
         </div>
         <div id="sticker">
-            <h1 style="background-color: tomato;">Sticker</h1>
+            <h1 style="background-color: tomato;">Sticker: $3</h1>
             <div class="add-to-cart">
                 <button class="add-button" id="minus" onclick="adjustValue('down','sticker')"><h2>-</h2></button>
                 <span id="sticker-count" class="count"><h1>1</h1></span>
@@ -21,7 +21,7 @@
             </div>
         </div>
         <div id="patch">
-            <h1 style="background-color: magenta;">Patch</h1>
+            <h1 style="background-color: magenta;">Patch: $8</h1>
             <div class="add-to-cart">
                 <button class="add-button" id="minus" onclick="adjustValue('down','patch')"><h2>-</h2></button>
                 <span id="patch-count" class="count"><h1>1</h1></span>
@@ -29,27 +29,12 @@
             </div>
         </div>
         <div id="checkout">            
-            <!-- <button id="checkout-button" onclick="checkout()">Current Total: $<span id="total">11</span>. <span style="text-decoration: underline; color: navy;">Checkout!</span></button> -->
-            <!-- Load Stripe.js on your website. -->
-<!-- <script src="https://js.stripe.com/v3"></script> -->
-
-<!-- Create a button that your customers click to complete their purchase. Customize the styling to suit your branding. -->
-<button
-  style="background-color:#6772E5;color:#FFF;padding:8px 12px;border:0;border-radius:4px;font-size:1em;cursor:pointer"
-  id="checkout-button-price_1K64SVAHI4v7SeoPZ2qQEkQO"
-  role="link"
-  type="button"
->
-  Checkout
-</button>
-
+            <button id="checkout-button" onclick="checkout()">Current Total: $<span id="total">11</span>. <span style="text-decoration: underline; color: navy;">Checkout!</span></button>
 <div id="error-message"></div>
-
 <script>
 (function() {
   var stripe = Stripe('pk_live_51K64EeAHI4v7SeoPWxXkblD0ml9NbzIqfH8gErUhW1eXsz77YSidOW2ZdO9gahDHUZXqWnQdZDKOZM9sfSaIEY2I00jZdWVkq0');
-
-  var checkoutButton = document.getElementById('checkout-button-price_1K64SVAHI4v7SeoPZ2qQEkQO');
+  var checkoutButton = document.getElementById('checkout-button');
   checkoutButton.addEventListener('click', function () {
     /*
      * When the customer clicks on the button, redirect
@@ -83,4 +68,45 @@
 </script>
         </div>
     </div>
+    <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <p>Thank you for your purchase of totally legit authentic <span style="font-family: death; color: orange;">Canada Gottem&trade;</span> Happy flexing!</p>
+          <a href="https://www.instagram.com/canada_gottem/">Follow the instagram if you're cool &#128553;</a></p>
+        </div>
+      
+      </div>
+      <script>
+
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+
+
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+// When the user clicks on the button, open the modal
+if(window.location.hash) {
+      var hash = window.location.hash.substring(1); //Puts hash in variable, and removes the # character
+      if(hash == "success"){
+        modal.style.display = "block";
+      }
+      // hash found
+}
+      </script>
 </body>
