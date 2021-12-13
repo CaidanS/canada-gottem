@@ -43,7 +43,10 @@
     stripe.redirectToCheckout({
       lineItems: [{price: 'price_1K66npAHI4v7SeoPqaV6ydyI', quantity: cart["sticker"]}, {price: 'price_1K66ndAHI4v7SeoPJ8slh3Un', quantity: cart["patch"]}],
       mode: 'payment',
-      shippingAddressCollection: {'US'},
+      shipping_address_collection: {
+      allowed_countries: ['US'],
+    },
+
       /*
        * Do not rely on the redirect to the successUrl for fulfilling
        * purchases, customers may not always reach the success_url after
