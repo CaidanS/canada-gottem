@@ -4,6 +4,7 @@ cart = {
 }
 adjustValue = function(direction, item_id){
     item_counter = document.getElementById(item_id + "-count");
+    item_value_form = document.getElementById(item_id + "_counter")
     value = cart[item_id];
     if(direction == "up"){
         if(cart[item_id] < 100){
@@ -16,6 +17,7 @@ adjustValue = function(direction, item_id){
         }
     }
     item_counter.innerHTML = "<h1>" + cart[item_id] + "</h1>";
+    item_value_form.value = cart[item_id];
     prices = {
         'patch': 8,
         'sticker': 3
@@ -24,3 +26,9 @@ adjustValue = function(direction, item_id){
 }
 
 var stripe = Stripe('pk_test_TYooMQauvdEDq54NiTphI7jx');
+
+// update_cart = function(){
+//     form = document.getElementById("action_form")
+//     action_string = "https://us-central1-canadagottem.cloudfunctions.net/stripe_charge?patch=" + cart["patch"] + "&sticker=" + cart["sticker"]
+//     form.action = action_string
+// }

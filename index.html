@@ -31,13 +31,17 @@
                 <button class="add-button" id="plus" onclick="adjustValue('up','patch')"><h2>+</h2></button>
             </div>
         </div>
-        <div id="checkout">            
-            <button id="checkout-button">Current Total: $<span id="total">11</span>. <span style="text-decoration: underline; color: navy;">Checkout!</span></button>
+        <div id="checkout">  
+            <form id="action_form" action="https://us-central1-canadagottem.cloudfunctions.net/charge_stripe" method="POST">         
+            <input name="sticker_counter" id="sticker_counter" value="0" style="display:none">
+            <input name="patch_counter" id="patch_counter" value="0" style="display:none">
+            <button type="submit" id="checkout-button">Current Total: $<span id="total">11</span>. <span style="text-decoration: underline; color: navy;">Checkout!</span> 
+            </form> 
           <div id="error-message"></div>
           <div id="about_section">
             <span class="line" style="display: inline-block;">Created by <a href="https://www.veniceohleyer.com/">Venice Ohleyer</a>,</span><span class="line" style="display: inline-block;">website by <a href="https://caidan.ml">Caidan Speth-McCrary</a></span>.
           </div>
-<script>
+<!-- <script>
 (function() {
   var stripe = Stripe('pk_test_51K64EeAHI4v7SeoP8Pw9OoEwBkQGvY72x90NsViAiavnw61FVwxxQdNAvScNe8VLQ4gzcoXnOuC0uad7nMZ11UW500SZel9kc1');
   var checkoutButton = document.getElementById('checkout-button');
@@ -73,7 +77,7 @@
     });
   });
 })();
-</script>
+</script> -->
         </div>
     </div>
     <div id="myModal" class="modal">
