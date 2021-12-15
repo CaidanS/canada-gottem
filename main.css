@@ -66,12 +66,27 @@ body{
 
 #sticker:hover{
     -webkit-animation: marquee 20s infinite linear;
+    animation: marquee 20s infinite linear;
 }
 
 #patch:hover{
     -webkit-animation: marquee 20s infinite linear;
+    animation: marquee 20s infinite linear;
 }
-
+@keyframes marquee {
+    0% {
+      background-position: 0;
+    }
+    /* 33%{
+        background-position: 75% 25%
+    }
+    66% {
+        background-position: 25% 75%; 
+    } */
+    100% {
+      background-position: 500% 500%;
+    }
+  }
 @-webkit-keyframes marquee {
     0% {
       background-position: 0;
@@ -177,6 +192,14 @@ body{
     animation: none;
     color: grey;
     background-color: lightgray;
+}
+
+@keyframes checkout {
+    0% { background-color: cyan}
+    25% { background-color: gold}
+    50% { background-color: hotpink}
+    75% {background-color: red;}
+    100% {background-color: cyan;}
 }
 
 @-webkit-keyframes checkout {
