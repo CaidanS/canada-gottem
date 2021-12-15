@@ -5,6 +5,8 @@ cart = {
 adjustValue = function(direction, item_id){
     item_counter = document.getElementById(item_id + "-count");
     item_value_form = document.getElementById(item_id + "_counter")
+    sticker_counter = document.getElementById("sticker_counter")
+    patch_counter = document.getElementById("patch_counter")
     value = cart[item_id];
     if(direction == "up"){
         if(cart[item_id] < 100){
@@ -21,6 +23,12 @@ adjustValue = function(direction, item_id){
     prices = {
         'patch': 8,
         'sticker': 3
+    }
+    submit_button = document.getElementById("checkout-button")
+    if (sticker_counter.value == 0 && patch_counter.value == 0){
+        submit_button.disabled = true;
+    } else {
+        submit_button.disabled = false;
     }
     document.getElementById("total").innerHTML = (cart['patch'] * prices['patch']) + (cart['sticker'] * prices['sticker']);
 }

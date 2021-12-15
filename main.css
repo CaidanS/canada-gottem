@@ -169,7 +169,18 @@ body{
     cursor: pointer;
     font-size: xx-large;
     font-weight: bolder;
+    color: navy;
+    animation: checkout 4s infinite linear;
 }
+
+@-webkit-keyframes checkout {
+ 0% { background-color: cyan}
+ 25% { background-color: gold}
+ 50% { background-color: hotpink}
+ 75% {background-color: red;}
+ 100% {background-color: cyan;}
+}
+
 
 /* The Modal (background) */
 .modal {
