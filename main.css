@@ -170,7 +170,13 @@ body{
     font-size: xx-large;
     font-weight: bolder;
     color: navy;
-    animation: checkout 4s infinite linear;
+    animation: checkout 1s infinite linear;
+}
+
+#checkout-button:disabled {
+    animation: none;
+    color: grey;
+    background-color: lightgray;
 }
 
 @-webkit-keyframes checkout {
@@ -180,7 +186,6 @@ body{
  75% {background-color: red;}
  100% {background-color: cyan;}
 }
-
 
 /* The Modal (background) */
 .modal {
