@@ -33,51 +33,14 @@
         </div>
         <div id="checkout">  
             <form id="action_form" action="https://us-central1-canadagottem.cloudfunctions.net/charge_stripe" method="POST">         
-            <input name="sticker_counter" id="sticker_counter" value="0" style="display:none">
-            <input name="patch_counter" id="patch_counter" value="0" style="display:none">
-            <button type="submit" id="checkout-button">Current Total: $<span id="total">11</span>. <span style="text-decoration: underline; color: navy;">Checkout!</span> 
+              <input name="sticker_counter" id="sticker_counter" value="1" style="display:none">
+              <input name="patch_counter" id="patch_counter" value="1" style="display:none">
+              <button type="submit" id="checkout-button">Current Total: $<span id="total">11</span>. <span style="text-decoration: underline; color: navy;">Checkout!</span> </button>
             </form> 
           <div id="error-message"></div>
           <div id="about_section">
             <span class="line" style="display: inline-block;">Created by <a href="https://www.veniceohleyer.com/">Venice Ohleyer</a>,</span><span class="line" style="display: inline-block;">website by <a href="https://caidan.ml">Caidan Speth-McCrary</a></span>.
           </div>
-<!-- <script>
-(function() {
-  var stripe = Stripe('pk_test_51K64EeAHI4v7SeoP8Pw9OoEwBkQGvY72x90NsViAiavnw61FVwxxQdNAvScNe8VLQ4gzcoXnOuC0uad7nMZ11UW500SZel9kc1');
-  var checkoutButton = document.getElementById('checkout-button');
-  checkoutButton.addEventListener('click', function () {
-    /*
-     * When the customer clicks on the button, redirect
-     * them to Checkout.
-     */
-    stripe.redirectToCheckout({
-      lineItems: [{price: 'price_1K66npAHI4v7SeoPqaV6ydyI', quantity: cart["sticker"]}, {price: 'price_1K66ndAHI4v7SeoPJ8slh3Un', quantity: cart["patch"]}],
-      mode: 'payment',
-      shippingAddressCollection: {allowedCountries: ['US', 'CA']},
-      // shippingOptions: [{shipping_rate: 'shr_1K67SCAHI4v7SeoPudmVFfII'}, {shipping_rate: 'shr_1K67P6AHI4v7SeoPt5TthhS2'}],
-      /*
-       * Do not rely on the redirect to the successUrl for fulfilling
-       * purchases, customers may not always reach the success_url after
-       * a successful payment.
-       * Instead use one of the strategies described in
-       * https://stripe.com/docs/payments/checkout/fulfill-orders
-       */
-      successUrl: 'https://sad-austin-4cde65.netlify.app#success',
-      cancelUrl: 'https://sad-austin-4cde65.netlify.app/',
-    })
-    .then(function (result) {
-      if (result.error) {
-        /*
-         * If `redirectToCheckout` fails due to a browser or network
-         * error, display the localized error message to your customer.
-         */
-        var displayError = document.getElementById('error-message');
-        displayError.textContent = result.error.message;
-      }
-    });
-  });
-})();
-</script> -->
         </div>
     </div>
     <div id="myModal" class="modal">
