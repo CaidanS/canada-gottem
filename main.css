@@ -6,6 +6,10 @@
     src: url(death.ttf);
   }
 
+.title {
+    font-family: death;
+}
+
 h1{
     margin: 0px;
 }
@@ -264,13 +268,45 @@ body{
         "checkout"
         "about";
         grid-template-columns: 100%;
-        grid-template-rows: auto 30vh 30vh 15vh 0vh;
+        grid-template-rows: auto 40vh 40vh 15vh 0vh;
         text-align: center; 
         grid-gap: .5em 
     }
     #header{
         font-size: xx-large;
     }
+    .title{
+        font-size: 3em;
+    }
+/* 
+    .marquee1 {
+        margin: 0 auto;
+        white-space: nowrap;
+        overflow: hidden;
+        position: absolute;
+      }
+      
+      .marquee1 span {
+        display: inline-block;
+        padding-left: 100%;
+        animation: marquee_phone 10s linear infinite;
+        font-family: death;
+        font-size: 2em;
+      }
+      
+      .marquee2 span {
+        animation-delay: 5s;
+      }
+      
+      @keyframes marquee_phone {
+        0% {
+          transform: translate(0, 0);
+        }
+        100% {
+          transform: translate(-100%, 0);
+        }
+      } */
+
     .add-button{
         font-size: small;
         width: 100%;
