@@ -58,7 +58,7 @@ body{
 }
 #sticker{
     background-image: url("sticker.png");
-    background-size: 10vh;
+    background-size: 100px;
     grid-area: sticker;
     /* background-color: coral; */
     display: flex;
@@ -108,7 +108,7 @@ body{
 
 #patch{
     background-image: url("gottem.png");
-    background-size: 10vh;
+    background-size: 100px;
     text-align: center;
     grid-area: patch;
     display: flex;
@@ -190,6 +190,8 @@ body{
     font-weight: bolder;
     color: navy;
     animation: checkout 1s infinite linear;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
 }
 
 #checkout-button:disabled {
@@ -255,7 +257,7 @@ body{
     cursor: pointer;
   }
 
-  @media screen and (max-width: 800px) {
+  @media screen and (max-width: 700px) {
     #main-grid{
         width: 100vw;
         height: 100vh;
@@ -268,7 +270,7 @@ body{
         "checkout"
         "about";
         grid-template-columns: 100%;
-        grid-template-rows: auto 40vh 40vh 15vh 0vh;
+        grid-template-rows: auto 40vh 40vh auto auto;
         text-align: center; 
         grid-gap: .5em 
     }
@@ -338,3 +340,15 @@ body{
     }
   }
 
+  @media screen and (max-width: 900px) {
+    #about_section{
+        display: block;
+        height: 1fr;
+        background-color: yellow;
+        grid-area: about;
+        padding-top: 1vh;
+    }
+    #about_button{
+        display: none;
+    }
+  }
